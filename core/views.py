@@ -69,3 +69,13 @@ def create_sale_order(request):
     else:
         form = SalesOrderForm()
     return render(request, 'core/create_sale_order.html', {'form': form})
+
+# View to list all sale orders
+def sale_order_list(request):
+    sale_orders = SalesOrder.objects.all()
+    return render(request, 'core/sale_order_list.html', {'sale_orders': sale_orders})
+
+# View to check stock levels
+def stock_level_check(request):
+    products = Product.objects.all()
+    return render(request, 'core/stock_level_check.html', {'products': products})

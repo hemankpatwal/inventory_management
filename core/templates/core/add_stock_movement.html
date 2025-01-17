@@ -1,0 +1,11 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <h2>Add Stock Movement</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Movement</button>
+    </form>
+    <a href="{% url 'product_list' %}">Back to Product List</a>
+{% endblock %}

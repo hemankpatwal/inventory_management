@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'product_list' %}">Products</a></li>
+                <li><a href="{% url 'supplier_list' %}">Suppliers</a></li>
+                <li><a href="{% url 'add_product' %}">Add Product</a></li>
+                <li><a href="{% url 'add_supplier' %}">Add Supplier</a></li>
+                <li><a href="{% url 'add_stock_movement' %}">Add Stock Movement</a></li>
+                <li><a href="{% url 'create_sale_order' %}">Create Sale Order</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Inventory Management System</p>
+    </footer>
+</body>
+</html>

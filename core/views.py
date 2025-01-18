@@ -2,6 +2,10 @@ from django.shortcuts import render, redirect
 from .models import Product, Supplier, SalesOrder, StockMovement
 from .forms import ProductForm, SupplierForm, SalesOrderForm, StockMovementForm
 
+#Home Page
+def home(request):
+    return render(request, 'core/home.html')
+
 # Add Product
 def add_product(request):
     if request.method == 'POST':

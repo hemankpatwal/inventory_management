@@ -1,0 +1,62 @@
+{% extends 'core/base.html' %}
+{% block content %}
+    <!-- Hero Section -->
+    <section class="hero bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4 font-weight-bold">Welcome to Inventory Management</h1>
+            <p class="lead">Easily manage your products, suppliers, and stock movements from one platform.</p>
+            <a href="{% url 'product_list' %}" class="btn btn-light btn-lg">View Products</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Key Features</h2>
+            <div class="row">
+                <!-- Feature 1: Manage Products -->
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <img src="https://via.placeholder.com/400x250?text=Manage+Products" class="card-img-top" alt="Manage Products">
+                        <div class="card-body">
+                            <h5 class="card-title">Manage Products</h5>
+                            <p class="card-text">Efficiently track your inventory, add new products, and manage stock levels seamlessly.</p>
+                            <a href="{% url 'product_list' %}" class="btn btn-primary">View Products</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Feature 2: Manage Suppliers -->
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <img src="https://via.placeholder.com/400x250?text=Manage+Suppliers" class="card-img-top" alt="Manage Suppliers">
+                        <div class="card-body">
+                            <h5 class="card-title">Manage Suppliers</h5>
+                            <p class="card-text">Add, update, and view supplier details to stay connected and manage your supply chain.</p>
+                            <a href="{% url 'supplier_list' %}" class="btn btn-primary">View Suppliers</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Feature 3: Track Stock Movements -->
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <img src="https://via.placeholder.com/400x250?text=Stock+Movements" class="card-img-top" alt="Stock Movements">
+                        <div class="card-body">
+                            <h5 class="card-title">Track Stock Movements</h5>
+                            <p class="card-text">Record incoming and outgoing stock movements and keep track of your inventory levels in real time.</p>
+                            <a href="{% url 'add_stock_movement' %}" class="btn btn-primary">Add Stock Movement</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta bg-dark text-white py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">Get Started with Inventory Management Today!</h2>
+            <a href="{% url 'create_sale_order' %}" class="btn btn-light btn-lg">Create Sale Order</a>
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,34 +1,64 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory Management</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="{% static 'js/script.js' %}"></script>
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="{% url 'product_list' %}">Products</a></li>
-                <li><a href="{% url 'supplier_list' %}">Suppliers</a></li>
-                <li><a href="{% url 'add_product' %}">Add Product</a></li>
-                <li><a href="{% url 'add_supplier' %}">Add Supplier</a></li>
-                <li><a href="{% url 'add_stock_movement' %}">Add Stock Movement</a></li>
-                <li><a href="{% url 'create_sale_order' %}">Create Sale Order</a></li>
-            </ul>
-        </nav>
-    </header>
     
-    <main>
+    <!-- Bootstrap 4 -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="{% url 'home' %}">Inventory Management</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="{% url 'product_list' %}">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'supplier_list' %}">Suppliers</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'add_product' %}">Add Product</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'add_supplier' %}">Add Supplier</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'add_stock_movement' %}">Add Stock Movement</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'create_sale_order' %}">Create Sale Order</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4 font-weight-bold">Welcome to Inventory Management</h1>
+            <p class="lead">Easily manage your products, suppliers, and stock movements from one platform.</p>
+            <a href="{% url 'product_list' %}" class="btn btn-light btn-lg">View Products</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container my-5">
         {% block content %}
         {% endblock %}
     </main>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2025 Inventory Management System</p>
     </footer>
+
+    <!-- Bootstrap 4 JS, Popper, jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
+
 </html>
